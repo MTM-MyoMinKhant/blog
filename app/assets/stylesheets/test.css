@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(194, 235, 235);
+}
+
+.new-article-link {
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+}

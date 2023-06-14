@@ -1,0 +1,55 @@
+<%= form_with model: article do |form| %>
+    <div>
+        <%= form.label :title %> <br>
+        <%= form.text_field :title %>
+        <% error_messages = @article.errors.full_messages_for(:title)%>
+        <% if error_messages.any? %>
+            <div><%= error_messages.first %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :body %> <br>
+        <%= form.text_field :body %>
+        <% error_messages = @article.errors.full_messages_for(:body)%>
+        <% if error_messages.any? %>
+            <div><%= error_messages.first %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :price %> <br>
+        <%= form.text_field :price %>
+        <% error_messages = @article.errors.full_messages_for(:price)%>
+        <% if error_messages.any? %>
+            <div><%= error_messages.first %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :totalprice %> <br>
+        <%= form.text_field :totalprice %>
+        <% error_messages = @article.errors.full_messages_for(:totalprice)%>
+        <% if error_messages.any? %>
+            <div><%= error_messages.first %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :status %><br>
+        <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
+    <!--
+        <div>
+            <%= form.check_box :pet_dog %>
+            <%= form.label :pet_dog, "I own a dog" %>
+            <%= form.check_box :pet_cat %>
+            <%= form.label :pet_cat, "I own a cat" %>
+        </div>
+        <div>
+            <%= form.radio_button :age, "child" %>
+            <%= form.label :age_child, "I am younger than 21" %>
+            <%= form.radio_button :age, "adult" %>
+            <%= form.label :age_adult, "I am over 21" %>
+        </div>
+    -->
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
